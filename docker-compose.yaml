@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  image:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    
+    container_name: g15_container
+    ports:
+      - "8888:8888"

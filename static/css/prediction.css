@@ -1,0 +1,103 @@
+.neonText {
+    animation: flicker 1.5s infinite alternate;
+    color: #fff;
+    padding-top: 3rem;
+    font-size: 90px;
+}
+  
+h1 {
+    font-size: 6rem;    
+}
+  
+  /* Flickering animation */
+@keyframes flicker {
+      
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px rgb(247, 0, 255),
+        0 0 80px rgb(247, 0, 255),
+        0 0 90px rgb(247, 0, 255),
+        0 0 100px rgb(247, 0, 255),
+        0 0 150px rgb(247, 0, 255);
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+ 
+.container {
+     margin-top: 10vh;
+     color: black;
+     background-color: black;
+}
+   
+h1, h2 {
+     text-align: center;
+     text-transform: uppercase;
+     font-weight: 400;
+}
+
+#photos{
+    display: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+   }
+  
+label[for='photos']{
+  
+    color:whitesmoke;
+    height: 60px;
+    width: 250px;
+    background-color: rgb(247, 0, 255);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+    border-radius: 8px;
+  
+}
+  
+label[for='photos']:hover {
+    background-color: rgb(255, 0, 221);
+}
+  
+  
+body{
+    background-color: black;
+}
+  
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+  
+  /* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    padding: 0 4px;
+}
+  
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}

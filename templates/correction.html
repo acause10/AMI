@@ -1,0 +1,95 @@
+{% extends "base.html" %} {% block title %}Correction{% endblock %} {% block
+    content %}
+
+<div
+  class="container-fluid"
+  style="
+    background-image: url(/static/pictures/predict2.png);
+  "
+>
+    <!-- Set styling -->
+    <link rel="stylesheet" type="text/css" href="/static/css/labeling.css" />
+    
+    <!-- Flickering neon text -->
+    <div class="container-fluid">
+      <h2 class="neonText">Correction</h2> 
+    </div>
+
+    <!-- Display images -->
+    {% if corr_images %}
+    <div class="labeling-container">
+      {% for curr_file_name in corr_images %}
+      <form method="POST" name="label">
+        <div class="item">
+          <h5>Image Name: {{curr_file_name}}</h5>
+          <img src="{{url_for('static',filename ="files/" + curr_file_name )}}" />
+          <br />
+          <br />
+          <br />
+    
+          <!-- Display label form -->
+          <h6>Correct Label</h6>
+          {{form3.csrf_token}}
+          {{form3.hidden_tag()}} {{form3.labels[loop.index0](class_="form-control")}}
+        </div>
+        {% endfor %}
+    
+        <br />
+
+        <!-- Submit button for label forms -->
+        <div class="col text-center">
+          {{form3.submit}}
+        </div>
+      </form>
+    </div>
+    {% endif %}
+
+    {% if trained %}
+    <br />
+    <br />
+    <br />
+    <!-- Display model trained successfully-->
+    <h3 class="neonText" style="font-size:30px; text-align:center; color: whitesmoke;">Model trained successfully!</h3>
+    <div class="col text-center">
+      <a class = "button" href = "/prediction">Move to prediction page</a>
+      <a class = "button" href = "/prediction/show_retrained">Retry Predictions</a>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    {% endif %}
+    
+    
+    <br />
+
+  </div>
+    <!-- ============================================================================ -->
+    
+    </div> <!-- TO CLOSE THE CONTAINER FROM BASE.HTML -->
+    
+    <!-- FOOTER OF THE LABELING PAGE -->
+    <footer class="bg-dark text-center text-white">
+      <!-- Container -->
+      <div class="container-fluid">
+          <div class="row">
+              <!-- Column -->
+              <div class="col-md-12" style="margin-top: 2rem;margin-bottom: 2rem;">
+                  <h3><strong>Technische Universität München</strong></h3>
+                  <h3>Arcisstraße 21</h3>
+                  <h3>80333 München</h3>
+              </div>
+          </div>
+      </div>
+      <!-- Container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        All Rights Reserved © 2022
+        <a class="text-white" href="https://google.com">AMI_Group15.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    {% endblock %}

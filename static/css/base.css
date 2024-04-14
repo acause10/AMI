@@ -1,0 +1,38 @@
+.navbar {
+  padding: 0.8rem;
+}
+
+.navbar-nav > a {
+  padding-right: 40px;
+}
+
+.nav-link {
+  font-size: 1.1em !important;
+}
+
+.nav-item {
+  text-align: right;
+}
+
+.navbar-brand img {
+  width: 48px;
+  height: 45px;
+  padding-left: 5px;
+}
+
+/*---------- Links on navbar ----------*/
+a.navlink {
+  border-radius: 7px;
+  color: white;
+  padding: 10px 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.navlink:hover {
+  color: rgb(220, 220, 220);
+}
+
+a.navlink:active {
+  color: rgb(255, 255, 255);
+}

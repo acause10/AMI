@@ -1,0 +1,128 @@
+{% extends "base.html" %} {% block title %}About{% endblock %} {% block content %}
+</div>
+
+<img src="{{url_for('static', filename = 'pictures/logo.png')}}" class="img-fluid" style="width: 100%; height: 700px; object-fit: cover;;">
+
+<figure class="text-center" style="margin-bottom:2rem;">
+    <blockquote class="blockquote">
+      <p style="font-style: italic; margin-top: 2rem;">A team is not a group of people that work together. A team is a group of people that trust each other.</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      Simon Sinek <cite title="Source Title">Find your why</cite>
+    </figcaption>
+</figure>
+
+<h1 style="font-size: 50px; text-align: center; margin-top:2rem; margin-bottom: 2rem;">Our journey started like this ...</h1>
+
+<div class="bg-white py-5">
+    <div class="container py-5">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 order-2 order-lg-1"><i class="bi bi-check2-all" style="font-size:50px;"></i>
+          <h2 class="font-weight-light">Group affirmation</h2>
+          <p class="font-italic text-muted mb-4">As the request from our nordic friends - WENN came, we assembled together as the last group of in total 15 groups. 
+            Most of us didn't know each other so the early phase of the project was a bit timid for everyone. We had to search suitable roles so that in the end we satisfy 
+            everyone's needs and wishes. Some wanted to do machine learning, others wanted to enroll in the web development. In the end we managed to find a proper role
+            for every single person, and thus start our journey with united forces.
+        </div>
+        <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="{{url_for('static', filename = 'pictures/AboutPictures/Sagnik_and_Azur.jpeg')}}" alt="" class="img-fluid mb-4 mb-lg-0 img-thumbnail"></div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-5 px-5 mx-auto"><img src="{{url_for('static', filename = 'pictures/AboutPictures/Dionysios.jpeg')}}" alt="" class="img-fluid mb-4 mb-lg-0 img-thumbnail"></div>
+        <div class="col-lg-6"><i class="bi bi-person-workspace" style="font-size:50px;"></i>
+          <h2 class="font-weight-light">Work</h2>
+          <p class="font-italic text-muted mb-4">As everyone got assigned a role he/she had less experience with, we started working our way from scratch, not just from project-perspective, but also from knowledge-perspective.
+            Some of us had experience with machine learning, but other positions such as backend and frontend development needed to be covered, so our experienced staff could not be engaged according to their strengths.
+            Progress throughout the project was made according to the knowledge built at that particular time, so some parts were done earlier than the others, but thanks to our weekly meetings and updates, we managed to stay in
+            the same lane for most of the time.        
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="bg-image" style="background-image: url('static/pictures/picture3.jpeg'); background-size: cover;
+    background-attachment: fixed; min-height: 700px;">
+</div>
+
+<div class="bg-white py-5">
+    <div class="container py-5">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 order-2 order-lg-1"><i class="bi bi-filetype-json" style="font-size:50px;"></i>
+          <h2 class="font-weight-light">First challenge</h2>
+          <p class="font-italic text-muted mb-4">Our first major challenge emerged when we got the data set from WENN. As there were 50.000 pictures, from which only approx. 900 contained bounded rectangles depicting car-damages, we needed to do some serious image-processing.
+            Images needed to be cropped and resized to proper size as well, so that the modeling team responsible for building and training the model could proceed with their work.
+            As aforementioned, some parts were trailing in the project, therefore our function for labeling was not yet ready, so we had to turn to the internet and search a suitable library which would ease this task.
+            Had we not found this solution, modeling and pre-processing team would be largely delayed, due to the fact that the knowledge of web-development was minimal at that point. 
+        </div>
+        <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="{{url_for('static', filename = 'pictures/AboutPictures/Basu.jpeg')}}" alt="" class="img-fluid mb-4 mb-lg-0 img-thumbnail"></div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-5 px-5 mx-auto"><img src="{{url_for('static', filename = 'pictures/AboutPictures/Xu_2.jpeg')}}" alt="" class="img-fluid mb-4 mb-lg-0 img-thumbnail"></div>
+        <div class="col-lg-6"><i class="bi bi-cpu" style="font-size:50px;"></i>
+          <h2 class="font-weight-light">Machine Learning</h2>
+          <p class="font-italic text-muted mb-4">As we progressed further through the project, our next challenge stood on the way of the modeling team. We tested models like ResNet and VGG16, and checked their performances. ResNet proved to be better,
+            although we had this issue where the predictions were giving out 98% confidence for one type of damage and 2% confidence for another type, without taking in consider the rest two. This was the case for every prediction, so we stepped up and manage to 
+            overcome this obstacle. Throughout the process of building a model, we were having intensive talks about the size and types of images we are going to use through our web application, because this particular detail played a big role in predictions.
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="bg-image" style="background-image: url('static/pictures/picture3.jpeg'); background-size: cover;
+    background-attachment: fixed; min-height: 700px;">
+</div>
+
+<div class="bg-white py-5">
+    <div class="container py-5">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 order-2 order-lg-1"><i class="bi bi-pause-circle" style="font-size:50px;"></i>
+          <h2 class="font-weight-light">Break!</h2>
+          <p class="font-italic text-muted mb-4">Further down the line, everyone started feeling overwhelmed and burned out thus we agreed to take a small break and have some time for fun. We organized several meetings in the nature
+            which also proved quite useful to build the team chemistry and get to know each other better. After this small pause, we continued building, testing and developing; implementing new ideas and talking about further plans. 
+            As the exam phase started closing in on us, we took 2 weeks off to solely focus on our exam performances, thus postponing the final version for the end of August. Small features were left to be implemented and we also had to figure
+            out how to deploy our app.
+        </div>
+        <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="{{url_for('static', filename = 'pictures/AboutPictures/azur_final.png')}}" alt="" class="img-fluid mb-4 mb-lg-0 img-thumbnail"></div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-5 px-5 mx-auto"><img src="{{url_for('static', filename = 'pictures/AboutPictures/eren_pushup.png')}}" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+        <div class="col-lg-6"><i class="bi bi-arrow-up-circle" style="font-size:50px;"></i>
+          <h2 class="font-weight-light">Final touches</h2>
+          <p class="font-italic text-muted mb-4">In the last stage of our project we spent time figuring out how to deploy our application. Most of us weren't familiar with docker and k8s, thus we needed to spend time learning about them 
+            and putting our acquired knowledge into use. Problems arised when we tried running container on the localhost, as the browser wasn't showing the content although we correctly mapped the ports. The problem turned out to be the location
+            on which we stored our container and run it. With docker-compose we managed to solve that issue as it automatically built the image and container without having to think where it was, but rather running it automatically.
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="bg-image" style="background-image: url('static/pictures/picture3.jpeg'); background-size: cover;
+    background-attachment: fixed; min-height: 700px;">
+</div>
+
+
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-md-12">
+                <h3><strong>Technische Universität München</strong></h3>
+                <h3>Arcisstraße 21</h3>
+                <h3>80333 München</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      All Rights Reserved © 2022
+      <a class="text-white" href="https://google.com">AMI_Group15.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
+{% endblock %}

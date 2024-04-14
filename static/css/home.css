@@ -1,0 +1,151 @@
+
+/* This is how you style class test*/
+/*.test{
+    display: block;
+    width: 300px;
+    height: 300px;
+    background: palegoldenrod;
+}*/
+
+/* This is how to style paragraph <p> defined under class test*/
+/*.test p{
+    color: brown;
+} */
+/* .top-content {
+    width: 100%;
+    padding: 0;
+} */
+
+/*.top-content {
+    position: static;
+    width: 100%;
+    padding: 0;
+    left: 0;
+}*/
+
+/* =========================================== Added styling to the carousel and its captions ===========================================*/
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-caption > h1{
+    color: rgb(183, 194, 194);
+    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+    width: 100%;
+    font-size: 500%;
+    text-shadow: 1px 1px 10px #000;
+    text-transform: uppercase;
+}
+
+.carousel-item {
+    height: 80vh;
+    width: 100%;
+    min-height: 250px; 
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel img{
+    min-width:100%;
+    height:100%; 
+}
+
+
+.carousel-control-next {
+    height: 100%;
+    width: 100px;
+}
+
+.carousel-control-prev {
+    height: 100%;
+    width: 100px;
+}
+
+.carousel-indicators > button {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #f7f0f0;
+    opacity: 70%;
+}
+
+/*.blankDiv {
+    height: 700px;
+    padding-top: 700px;
+}*/
+
+/* =========================================== Added styling to paddings and welcome section ===========================================*/
+
+.padding{
+    padding-bottom: 2rem;
+}
+
+.welcome{
+    width: 100%;
+    margin:0 auto;
+    padding-top: 2rem;
+}
+
+.welcome hr {
+    border-top: 2px solid #535353;
+    width: 100%;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
+}
+
+/* =========================================== Added styling to the icons in three-column section ===========================================*/
+
+
+.bi-bookmark-check-fill{
+    color:coral;
+}
+
+.bi-cpu-fill{
+    color: darkred;
+}
+
+.bi-person-check-fill{
+    color: brown;
+}
+
+.bi-bookmark-check-fill, .bi-cpu-fill, .bi-person-check-fill{
+    margin: 1rem;
+    font-size: 4em;
+}
+
+
+/* =========================================== Added styling to the social-media section ===========================================*/
+
+.bi-facebook{
+    color: #3b5998;
+}
+
+.bi-youtube{
+    color: red;
+}
+
+.bi-twitter{
+    color: #1DA1F2;
+}
+
+.bi-google{
+    color: orangered;
+}
+
+.bi-instagram{
+    color: orange;
+}
+
+.bi-facebook, .bi-instagram, .bi-youtube, .bi-google, .bi-twitter{
+    font-size: 3em;
+    margin-top: 2rem;
+    margin: 1rem;
+}

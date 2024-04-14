@@ -1,0 +1,169 @@
+/* ------------------- Image grid code ---------------------*/
+body {
+  text-align: center;
+}
+
+.image-grid {
+  --gap: 16px;
+  --num-cols: 4;
+  --row-height: 300px;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+}
+
+.image-grid > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-grid-col-2 {
+  grid-column: span 2;
+}
+
+.image-grid-row-2 {
+  grid-row: span 2;
+}
+
+/* Anything udner 1024px */
+@media screen and (max-width: 1024px) {
+  .image-grid {
+    --num-cols: 2;
+    --row-height: 200px;
+  }
+}
+
+/* ------------------- Centering forms and images ---------------------*/
+
+form {
+  display: inline-block;
+  text-align: center;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+  object-fit: fill;
+  border-radius: 10px;
+}
+
+/* Styling for upload button and inputs */
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  background-color: rgb(0, 7, 48);
+  border-radius: 7px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+a.button:hover {
+  color: white;
+}
+
+input[type="submit"],
+input[type="button"] {
+  background-color: rgb(0, 7, 48);
+  border-radius: 7px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  background-color: rgb(0, 7, 48);
+  color: black;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 7px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+/* ------------------- Container for displaying images --------------------- */
+
+.labeling-container {
+  margin: auto;
+  width: 60%;
+  /*border: 2px solid rgb(39, 39, 39);
+  border-radius: 8px;*/
+  padding: 50px;
+  width: 500px;
+  /*animation: flicker 1.5s infinite alternate;*/
+}
+
+.item {
+  text-align: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #eeeeee;
+  padding: 3em;
+  margin-bottom: 1em;
+  border-radius: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+
+  /* Remove the next line if you want the span to appear next to the h1 */
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgb(141, 141, 141);
+  padding: 10px 10px;
+}
+
+/* ------------------- Neon Text ---------------------*/
+
+.neonText {
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+  padding-top: 3rem;
+  font-size: 90px;
+}
+
+/* Flickering animation */
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+      0 0 40px rgb(0, 7, 48), 0 0 80px rgb(0, 7, 48), 0 0 90px rgb(0, 7, 48),
+      0 0 100px rgb(0, 7, 48), 0 0 150px rgb(0, 7, 48);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+/* Styling for h(i) , i = 1,2,4 */
+
+h1,
+h2,
+h4 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}

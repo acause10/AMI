@@ -1,0 +1,138 @@
+{% extends "base.html" %} {% block title %}Prediction{% endblock %} {% block
+content %}
+
+<!-- Set styling -->
+<link rel="stylesheet" type="text/css" href="/static/css/labeling.css" />
+
+<div
+  class="container-fluid"
+  style="
+    background-image: url(/static/pictures/predict2.png);
+  "
+>
+    {% if form1 %}
+    <!-- Flickering neon text -->
+    <div class="container-fluid">
+        <h1 class="neonText">
+            404
+        </h1>
+        <h2 class="neonText">Prediction Not Found</h2> 
+    </div>
+    {% endif %}
+
+    <!-- Error handling if you upload too many files -->
+    {% if error %}
+    <p class="error" style = "text-align:center"><strong>Error:</strong> {{ error }}</p>
+    <br />
+    <br />
+    {% endif %}
+
+    {% if form1 %}
+    <!-- Upload files form -->
+    <br />
+    <br />
+    <br />
+    <div class="labeling-container">
+        <form method="POST" enctype="multipart/form-data" name="image">
+            <div class="form-group">
+                <h6 class="neonText" style="font-size:20px;color: whitesmoke">UPLOAD IMAGES <i class="bi bi-cloud-arrow-up-fill" style="font-size:20px;color: whitesmoke;"></i></h6>
+            </div>
+            {{ form1.csrf_token }} {{form1.photos}}
+            <span class="validation_error">{{ ', '.join(form1.photos.errors) }}</span>
+            {{form1.submit}}
+        </form>
+    </div>
+    {% endif %}
+
+    <!-- Added image grid to display uploaded images -->
+    {% if grid_images %}
+    <br />
+    <br />
+    <h4>Uploaded Images</h4>
+    <div class="image-grid">
+        {% for curr_file_name in grid_images %}
+        <img style="max-width: 100%; height:100%" src="{{url_for('static', filename = "files/" + curr_file_name )}}" />
+        {% endfor %}
+    </div>
+    <br />
+    <br />
+
+    <!-- Added  get predictions button -->
+    <div class="col text-center">
+        <a class= "button" href="/prediction/show">Get Predictions </a>
+        <br />
+        <br />
+    </div>
+    {% endif %} 
+
+
+    <!-- Display images and their predicions -->
+    {% if predictions %}
+    <!-- Flickering neon text -->
+    <h2 class="neonText">Prediction</h2> 
+
+    <div class="labeling-container">
+        {% for curr_file_name in pred_images %}
+        <div class="item">
+            <h5>Image Name: {{curr_file_name}}</h5>
+            <img src="{{url_for('static',filename ="files/" + curr_file_name )}}" />
+            <br />
+            <br />
+            <!-- Display prediction -->
+            <header>
+                <h6>Prediction</h6>
+                <h6>{{predictions[loop.index0]}}</h6>
+            </header>
+            {% if prob_dicts %}
+            <header>
+                <h6>Confidence <br /><br />{{prob_dicts[loop.index0]}}</h6>
+            </header>
+            {% endif %}
+            <br />
+            <div class="col text-center">
+                <form method = "POST" id="corrections">
+                    <input type="checkbox" value={{curr_file_name}} name ="corr_checkbox">
+                    <label> Add to correction</label><br>
+            </div>
+        </div>
+        {% endfor %}
+        <br />
+        <div class="col text-center">
+                <input type="submit" value="Start Correction" >
+            </form>  
+        </div>   
+    </div>
+    {% endif %}
+
+    <!-- Error handling if you dont choose files to correct -->
+    {% if error2 %}
+    <p class="error" style = "text-align:center"><strong>Error:</strong> {{ error2 }}</p>
+    <br />
+    <br />
+    {% endif %}
+</div>
+
+<!-- ============================================================================ -->
+<!-- FOOTER OF THE LABELING PAGE -->
+<footer class="bg-dark text-center text-white">
+  <!-- Container -->
+  <div class="container-fluid">
+      <div class="row">
+          <!-- Column -->
+          <div class="col-md-12" style="margin-top: 2rem;margin-bottom: 2rem;">
+              <h3><strong>Technische Universität München</strong></h3>
+              <h3>Arcisstraße 21</h3>
+              <h3>80333 München</h3>
+          </div>
+      </div>
+  </div>
+  <!-- Container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    All Rights Reserved © 2022
+    <a class="text-white" href="https://google.com">AMI_Group15.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+{% endblock %}

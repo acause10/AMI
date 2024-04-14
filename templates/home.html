@@ -1,0 +1,228 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} 
+
+{% block content %}
+    <!-- <br>
+    <h3 align="center">Welcome to the home page!</h3>
+    <br> -->
+<!-- It suffices to write '.{classname} to automatically create class'-->
+<!-- <div class="test">
+    <p>This is a test to see if it works</p>
+</div> -->
+<style>
+    h1 {
+        font-family: 'Ubuntu', sans-serif;
+        height: 100%;
+        width: 100%;
+        color: #222;
+    }
+    p {
+        font-family: 'Ubuntu', sans-serif;
+        height: 100%;
+        width: 100%;
+        color: #222;
+    }
+    h3 {
+        font-family: 'Ubuntu', sans-serif;
+        color: #222;
+    }
+            
+</style>
+</div>
+
+<!-- ================================================== CAROUSEL INSIDE OF TOP CONTENT ================================================== -->
+<!-- <div class="top-content" style="background-color: #353030;"> -->
+</div>
+<!-- <div class="container-fluid"> -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2500">
+                <img src="{{url_for('static', filename = 'pictures/label.png')}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="display-2">We label</h1>
+            <!-- <p>Labeling since 1997.</p> -->
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2500">
+                <img src="{{url_for('static', filename = 'pictures/predict3.png')}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="display-2">We predict</h1>
+            <!-- <p>Predicting since 1997.</p> -->
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2500">
+                <img src="{{url_for('static', filename = 'pictures/correction.png')}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="display-2">We correct</h1>
+            <!-- <p>Correcting since 1997.</p> -->
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+<!-- </div> -->
+<!-- </div> -->
+
+
+<!-- ================================================== BLANK DIV BECAUSE OF ABSOLUTE POSITIONING ==================================================-->
+<!-- <div class="blankDiv"></div> -->
+
+<!-- ================================================== INTRO SECTION ================================================== -->
+<div class="container-fluid padding">
+<div class="row welcome text-center">
+    <div class="col-16">
+        <h1 class="display-4">Data for the future.</h1>
+    </div>
+    <hr>
+    <div class="col-12">
+        <p class="lead">Welcome to the project of group 15, course of "Applied Machine Intelligence" at the TU Munich. We hope you enjoy your stay at
+            our website, and thus have a great time here. Throughout this webpage you will be guided through the functions of labeling, predicting and correcting
+            wrong predictions. We also documented our journey in the "About" page. You can as well meet the team in "Team" page. Have fun! :)
+        </p>
+    </div>
+</div>
+</div>
+
+
+<!-- ================================================== 3column-section! ================================================== -->
+
+<div class="container-fluid padding">
+<div class="row text-center padding">
+    <div class="col-xs-12 col-sm-6 col md-4">
+        <i class="bi bi-bookmark-check-fill"></i>
+        <h3>LABELING</h3>
+        <p>Labeling car damages such as scratch, dent, rim or other.</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col md-4">
+        <i class="bi bi-cpu-fill"></i>
+        <h3>PREDICTING</h3>
+        <p>Predicting which type of damage does the car have based on the input image.</p>
+    </div>
+    <div class="col-sm-12 col md-4">
+        <i class="bi bi-person-check-fill"></i>
+        <h3>CORRECTION</h3>
+        <p>Correcting wrong predictions and improving the model.</p>
+    </div>
+</div>
+<hr class="my-4">
+</div>
+
+<!-- ================================================== FIXED BACKGROUND ================================================== -->
+
+<div class="bg-image" style="background-image: url('static/pictures/logo.png'); background-size: cover;
+    background-attachment: fixed; min-height: 700px;">
+</div>
+
+<!-- ================================================== START CLASSIFYING ==================================================-->
+
+<div class="container-fluid padding">
+<div class="row welcome text-center">
+    <div class="col-12">
+        <h1 class="display-4">START CLASSIFYING!</h1>
+    </div>
+    <hr>
+</div>
+</div>
+
+<!-- ================================================== CARDS ================================================== -->
+
+<div class="container-fluid padding">
+<div class="row padding">
+    <div class="col-md-6">
+        <div class="card">
+            <img class="card-img-top" src="{{url_for('static', filename = 'pictures/label.png')}}">
+            <div class="card-body">
+                <h4 class="card-title">Label</h4>
+                <p class="card-text">Our labeling service offers labeling of up to 50 images at a time!</p>
+                <a class="btn btn-outline-secondary" href="/labeling">Start labeling!</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <img class="card-img-top" src="{{url_for('static', filename = 'pictures/predict.png')}}">
+            <div class="card-body">
+                <h4 class="card-title">Prediction</h4>
+                <p class="card-text">Our prediction services are highly reliable giving up to 260% accuracy!</p>
+                <a class="btn btn-outline-secondary" href="/prediction">Start predicting!</a>
+            </div>
+        </div>
+    </div>
+<!--
+    <div class="col-md-4">
+        <div class="card">
+            <img class="card-img-top" src="{{url_for('static', filename = 'pictures/picture4_res_crop.jpg')}}">
+            <div class="card-body">
+                <h4 class="card-title">Correction</h4>
+                <p class="card-text">Correction services change the predicted output in case the user is not satisfied!</p>
+                <a class="btn btn-outline-secondary">Start correcting!</a>
+            </div>
+        </div>
+    </div>
+-->
+</div>
+</div>
+
+<!-- ================================================== ANOTHER FIXED BACKGROUND ================================================== 
+<div class="bg-image" style="background-image: url('static/pictures/picture3.jpeg'); background-size: cover;
+    background-attachment: fixed; min-height: 500px;">
+</div>
+
+-->
+
+<!-- ================================================== SOCIAL MEDIA ================================================== -->
+<div class="container-fluid padding">
+<div class="row text-center padding">
+    <div class="col-12">
+        <h2>Connect with us!</h2>
+    </div>
+    <div class="col-12 social padding">
+        <a><i class="bi bi-facebook"></i></a>
+        <a><i class="bi bi-instagram"></i></a>
+        <a><i class="bi bi-google"></i></a>
+        <a><i class="bi bi-youtube"></i></a>
+        <a><i class="bi bi-twitter"></i></a>
+    </div>
+
+</div>
+</div>
+
+<!-- ================================================== FOOTER ==================================================-->
+
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-md-12">
+                <h3><strong>Technische Universität München</strong></h3>
+                <h3>Arcisstraße 21</h3>
+                <h3>80333 München</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      All Rights Reserved © 2022
+      <a class="text-white" href="https://google.com">AMI_Group15.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
+<!-- ================================================== FOOTER ================================================== -->
+{% endblock content %}
