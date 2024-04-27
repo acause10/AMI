@@ -1,8 +1,12 @@
-# Welcome to the master repo!
+# Image Classification for Different Types of Damages on Cars
 
-This is the production branch where we merge front- and backend into production.
+## Description
+This project was developed in SS22/23 during the course of Applied Machine Intelligence. The main task was to create and train a model able to classify different types of damages on the cars: rim, scratch, dent or something else.<br>
+Thereby, we created a web-app to which the model was deployed. Check out below how to run it: ⬇️⬇️⬇️⬇️⬇️<br>
 
-# Instructions 
+**NOTE**: The project has not been maintaned. Use at your own risk 😉
+
+## Instructions 
 * Option 1: Navigate to the project dir and manually run the app after installing requirements.txt file:
 ```
 pip install -r requirements.txt
@@ -32,20 +36,23 @@ Description: Contains all input fields and forms for the frontend representation
 
 ## main.py
 
-Description: Runs the app and combines all files.
+Runs the app and combines all files.
 
 
 ## requirements.txt
 
-Description: Contains all dependencies and required packages for running the app. 
+Contains all dependencies and required packages for running the app. 
 
 ## train_SVM.py 
 
-Description: Function that retrains the model. 
+Function that retrains the model. 
 
 ## Dockerfile, docker-compose.yaml
 
-Description: Creates docker image and runs the app container. 
+Creates docker image and runs the app container. 
+
+## Credits:
+Dionysios Mitsios, Maximilian Studt, Shiyao Xu, Chengyan Zhang, Eren Özcelik, Zishan Li, Xu Yan, Subhosri Basu, Sagnik Dutta
 
 
 
