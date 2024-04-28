@@ -6,6 +6,9 @@ Thereby, we created a web-app to which the model was deployed. Check out below h
 
 **NOTE**: The project has not been maintaned. Use at your own risk 😉
 
+## Project Grade:
+**1.7** (German scale: 1-best, 5-worst)
+
 ## Instructions 
 * Option 1: Navigate to the project dir and manually run the app after installing requirements.txt file:
 ```
